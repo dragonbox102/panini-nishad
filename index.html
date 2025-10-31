@@ -206,26 +206,50 @@
             Complete guide to setting up and using the IXL Auto Answer script with AI APIs
         </p>
         
+        <div class="warning-box" style="background: #3a1010; border-left: 4px solid #ff4444;">
+            <strong style="color: #ff6666; font-size: 1.3rem;">⚠️ STOP! READ THIS FIRST ⚠️</strong>
+            <br><br>
+            <strong style="color: #ffaaaa; font-size: 1.1rem;">THIS PAGE IS ONLY DOCUMENTATION!</strong>
+            <br><br>
+            <p style="color: #ffcccc;">❌ This webpage does NOT have any buttons or functionality<br>
+            ❌ You CANNOT test the script on this page<br>
+            ❌ Nothing will work here - this is just installation instructions</p>
+            <br>
+            <p style="color: #ffdddd;">✅ The actual script is a <strong>TamperMonkey extension</strong><br>
+            ✅ It ONLY works when you visit <strong>IXL.com</strong><br>
+            ✅ You must install it in your browser first (see instructions below)</p>
+        </div>
+        
         <div class="warning-box">
-            <strong>⚠️ Version 25.1 Update:</strong> Now defaults to Gemini 1.5 Flash for BETTER rate limits (15 req/min vs 10 req/min)! Critical fixes! Simplified click handler, fixed auto-submit verification, and reduced token usage by 50-70%!
+            <strong>⚠️ IMPORTANT - VERSION 26.2 UPDATE:</strong>
+            <br><br>
+            <strong>🧹 SIMPLIFIED UI:</strong> Settings button removed for cleaner interface. All API keys are now shared and built-in!
+            <br><br>
+            <strong>🔑 ACCESS KEY REQUIRED:</strong> This script requires an access key to function. You must obtain a valid access key from the script distributor before you can use it.
+            <br><br>
+            <strong>✅ NO API KEY NEEDED:</strong> The script now includes shared Gemini API keys built-in! You no longer need to get your own Gemini API key.
+            <br><br>
+            <strong>📊 RATE LIMITS:</strong> 75 questions per 13 hours for regular access keys. Unlimited for premium access keys.
         </div>
 
         <h2>📋 Quick Setup Guide</h2>
         
-        <h3>Step 1: Install TamperMonkey</h3>
+        <h3>Step 1: Obtain an Access Key</h3>
+        <div class="warning-box">
+            <strong>⚠️ ACCESS KEY REQUIRED:</strong> This script is access-controlled. You MUST have a valid access key to use it.
+            <ul>
+                <li>Contact the script distributor (Alex) to request an access key</li>
+                <li>Without a valid access key, the script UI will show but nothing will work</li>
+                <li>The script checks for version updates and may stop working if outdated</li>
+            </ul>
+        </div>
+        
+        <h3>Step 2: Install TamperMonkey</h3>
         <p>TamperMonkey is a browser extension that allows you to run custom scripts on websites.</p>
         <ul>
             <li><strong>Chrome:</strong> <a href="https://chrome.google.com/webstore/detail/tampermonkey/" target="_blank">Chrome Web Store</a></li>
             <li><strong>Firefox:</strong> <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank">Firefox Add-ons</a></li>
             <li><strong>Other browsers:</strong> <a href="https://www.tampermonkey.net/" target="_blank">TamperMonkey.net</a></li>
-        </ul>
-
-        <h3>Step 2: Get an AI API Key</h3>
-        <p>You'll need an API key from one of these providers (see comparison below):</p>
-        <ul>
-            <li><strong>Google Gemini:</strong> <a href="https://aistudio.google.com/app/apikey" target="_blank">Get Gemini API Key</a> (Recommended - 1,500 requests/day FREE)</li>
-            <li><strong>Groq:</strong> <a href="https://groq.com" target="_blank">Groq.com</a> (1,000 requests/day, super fast)</li>
-            <li><strong>OpenRouter:</strong> <a href="https://openrouter.ai" target="_blank">OpenRouter.ai</a> ($5 free credits)</li>
         </ul>
 
         <h3>Step 3: Install the Script</h3>
@@ -235,23 +259,43 @@
             <li>Click "Install" in the TamperMonkey dialog</li>
         </ol>
 
-        <h3>Step 4: Configure the Script</h3>
+        <h3>Step 4: Use the Script on IXL.com</h3>
+        <div class="info-box" style="background: #102a3a; border-left: 4px solid #26a6d4;">
+            <strong style="color: #4a9eff;">🌐 IMPORTANT: The script ONLY works on IXL.com!</strong>
+            <br><br>
+            <p>After installing the script in TamperMonkey, you must visit IXL.com to use it. The script panel will NOT appear on this documentation page or any other website.</p>
+        </div>
         <ol>
-            <li>Visit any IXL.com page</li>
-            <li>You'll see the script panel in the top-right corner</li>
-            <li>Click "Toggle Settings"</li>
-            <li>Paste your API key and save</li>
-            <li>Click "Test Key" to verify it works</li>
+            <li><strong>Go to IXL.com</strong> and open any math question</li>
+            <li>You'll see a control panel appear in the <strong>top-right corner</strong> of the page</li>
+            <li>The panel title will say "IXL Auto Answer (Gemini AI)"</li>
+            <li>Look for the <strong>"Access Key"</strong> section (usually near the bottom of the panel)</li>
+            <li><strong>Enter your access key</strong> in the text field</li>
+            <li>Click the <strong>"Activate"</strong> button</li>
+            <li>If valid, you'll see "✓ Access key valid" in green</li>
+            <li>Now click <strong>"Start Answering"</strong> to solve the current IXL question!</li>
         </ol>
 
         <div class="info-box">
-            <strong>✅ You're all set!</strong> Now you can start using the auto-answer feature on IXL questions.
+            <strong>✅ You're all set!</strong> With a valid access key, you can now use the auto-answer feature on IXL questions. The script uses built-in shared API keys, so you don't need to configure anything else!
+        </div>
+        
+        <div class="warning-box">
+            <strong>🔴 Troubleshooting: "Nothing happens when I enter my access key"</strong>
+            <br><br>
+            <p>If buttons don't respond:</p>
+            <ul>
+                <li><strong>Wrong location:</strong> Make sure you're on <strong>IXL.com</strong>, not on this documentation page</li>
+                <li><strong>Script not installed:</strong> Open TamperMonkey and verify the script is installed and enabled</li>
+                <li><strong>Invalid key:</strong> The access key must be exactly correct (case-sensitive)</li>
+                <li><strong>Outdated version:</strong> The script auto-checks for updates. If it's outdated, you'll get an alert</li>
+            </ul>
         </div>
 
         <h2>🤖 AI API Comparison - Which Has Best Limits?</h2>
         
         <div class="info-box">
-            <strong>TL;DR:</strong> <span class="highlight">Gemini 1.5 Flash</span> has the most generous FREE limits at 1,500 requests/day!
+            <strong>TL;DR:</strong> <span class="highlight">Gemini 2.0 Flash</span> is now the default! Latest model with 10 req/min, 1,500 req/day. Switch to Gemini 1.5 Flash if you need faster rate limits (15 req/min).
         </div>
 
         <table>
@@ -265,15 +309,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Gemini 1.5 Flash</strong></td>
-                    <td><span class="highlight">15 req/min, 1,500 req/day</span></td>
-                    <td>Most IXL users</td>
+                    <td><strong>Gemini 2.0 Flash</strong></td>
+                    <td><span class="highlight">10 req/min, 1,500 req/day</span></td>
+                    <td>⭐ DEFAULT - Latest model</td>
                     <td><a href="https://aistudio.google.com/app/apikey">Get Key</a></td>
                 </tr>
                 <tr>
-                    <td><strong>Gemini 2.0 Flash</strong></td>
-                    <td>10 req/min, 1,500 req/day</td>
-                    <td>Latest model, slightly slower</td>
+                    <td><strong>Gemini 1.5 Flash</strong></td>
+                    <td>15 req/min, 1,500 req/day</td>
+                    <td>Better rate limits if needed</td>
                     <td><a href="https://aistudio.google.com/app/apikey">Get Key</a></td>
                 </tr>
                 <tr>
@@ -304,10 +348,10 @@
         </table>
 
         <div class="api-card">
-            <h4>🏆 Recommended: Gemini 1.5 Flash</h4>
-            <p class="limits">FREE: 15 requests/min, 1,500 requests/day</p>
-            <p>Perfect for IXL users. With the script's new HTML-only mode, you can answer 1,500 questions per day without hitting limits!</p>
-            <p><strong>Why it's best:</strong> No credit card needed, instant setup, generous limits, excellent at math</p>
+            <h4>🏆 Default: Gemini 2.0 Flash</h4>
+            <p class="limits">FREE: 10 requests/min, 1,500 requests/day</p>
+            <p>Latest model from Google! Perfect for IXL users. With the script's HTML-only mode, you can answer 1,500 questions per day without hitting limits!</p>
+            <p><strong>Why it's the default:</strong> No credit card needed, instant setup, latest AI model, excellent at math</p>
         </div>
 
         <div class="api-card">
@@ -376,6 +420,42 @@ target.click(); // Clicks the correct answer</div>
         <h2>❓ Frequently Asked Questions</h2>
 
         <div class="faq-item">
+            <div class="faq-question">🔥 Q: The UI shows up but nothing works when I click "Start Answering"! How do I fix this?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> This is the most common issue! The script requires an <strong>access key</strong> to function.</p>
+                <p><strong>What's happening:</strong></p>
+                <ul>
+                    <li>✅ The script panel appears in the top-right corner (this is normal)</li>
+                    <li>❌ When you click "Start Answering", nothing happens or you get an error</li>
+                    <li>🔒 This is because you haven't entered a valid access key yet</li>
+                </ul>
+                <p><strong>Solution:</strong></p>
+                <ol>
+                    <li>Look for the <strong>"Access Key"</strong> section in the script panel (it may be at the bottom)</li>
+                    <li>Enter your access key in the text field</li>
+                    <li>Click the <strong>"Activate"</strong> button</li>
+                    <li>If the key is valid, you'll see "✓ Access key valid" in green</li>
+                    <li>Now the "Start Answering" button will work!</li>
+                </ol>
+                <p><strong>⚠️ Don't have an access key?</strong> Contact the script distributor to request one. This script is access-controlled and won't work without a valid key.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Do I need my own Gemini API key?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> <span class="highlight">NO!</span> Version 25.1 includes shared API keys built-in.</p>
+                <ul>
+                    <li>✅ The script uses a pool of 9 shared Gemini API keys</li>
+                    <li>✅ Automatic rotation when rate limits are hit</li>
+                    <li>✅ You only need an <strong>access key</strong> to unlock the script</li>
+                    <li>❌ No need to get your own Gemini API key anymore!</li>
+                </ul>
+                <p><strong>Note:</strong> The old "API Key" settings field is now hidden/ignored since shared keys are used.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
             <div class="faq-question">Q: Why am I hitting rate limits after only 20 questions?</div>
             <div class="faq-answer">
                 <p><strong>A:</strong> You were hitting the <strong>per-minute</strong> limit, not the daily limit. Here's what happened:</p>
@@ -390,24 +470,27 @@ target.click(); // Clicks the correct answer</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Q: Which Gemini model has better limits - 1.5 Flash or 2.0 Flash?</div>
+            <div class="faq-question">Q: Which Gemini model should I use - 1.5 Flash or 2.0 Flash?</div>
             <div class="faq-answer">
-                <p><strong>A:</strong> Gemini 1.5 Flash has better FREE tier limits:</p>
+                <p><strong>A:</strong> It depends on your needs:</p>
                 <table>
                     <tr>
                         <th>Model</th>
                         <th>Free Tier</th>
-                    </tr>
-                    <tr>
-                        <td>Gemini 1.5 Flash</td>
-                        <td><span class="highlight">15 req/min</span>, 1,500 req/day</td>
+                        <th>Best For</th>
                     </tr>
                     <tr>
                         <td>Gemini 2.0 Flash</td>
                         <td>10 req/min, 1,500 req/day</td>
+                        <td>⭐ Default - Latest model, best accuracy</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini 1.5 Flash</td>
+                        <td><span class="highlight">15 req/min</span>, 1,500 req/day</td>
+                        <td>Higher per-minute limit if you need speed</td>
                     </tr>
                 </table>
-                <p><strong>Recommendation:</strong> Use Gemini 1.5 Flash for the higher per-minute limit!</p>
+                <p><strong>Recommendation:</strong> Start with Gemini 2.0 Flash (default). Switch to 1.5 Flash if you need faster rate limits!</p>
             </div>
         </div>
 
@@ -523,8 +606,8 @@ target.click(); // Clicks the correct answer</div>
         </ul>
 
         <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border);">
-            <p style="color: var(--text-secondary);">Version 25.1 - NOW DEFAULTS TO GEMINI 1.5 FLASH (15 req/min)!</p>
-            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Better rate limits • HTML-only requests • Better button detection • 50-70% Lower Tokens</p>
+            <p style="color: var(--text-secondary);">Version 26.2 - Simplified UI • Settings Button Removed!</p>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Cleaner Interface • Shared API Keys • Access Key Storage Fixed</p>
         </div>
     </div>
 </body>
