@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXL Auto Answer - Setup Guide & FAQ</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #2a2a2a;
+            --text-primary: #f0f0f0;
+            --text-secondary: #b0b0b0;
+            --accent: #10a37f;
+            --accent-hover: #0d8c6d;
+            --border: #333;
+            --code-bg: #0f0f0f;
+            --warning-bg: #2a2410;
+            --warning-border: #d4a226;
+            --info-bg: #102a3a;
+            --info-border: #26a6d4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #4a9eff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h2 {
+            color: var(--accent);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .info-box {
+            background: var(--info-bg);
+            border-left: 4px solid var(--info-border);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .warning-box {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+        
+        .info-box strong, .warning-box strong {
+            color: var(--text-primary);
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        code {
+            background: var(--code-bg);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: var(--accent);
+            font-size: 0.9em;
+        }
+        
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .api-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .api-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+        
+        .api-card .limits {
+            color: #4a9eff;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+        
+        th {
+            background: var(--bg-tertiary);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        td {
+            color: var(--text-secondary);
+        }
+        
+        .highlight {
+            background: rgba(16, 163, 127, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 IXL Auto Answer - Setup Guide & FAQ</h1>
+        <p style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 2rem;">
+            Complete guide to setting up and using the IXL Auto Answer script with AI APIs
+        </p>
+        
+        <div class="warning-box">
+            <strong>⚠️ Version 25.1 Update:</strong> Now defaults to Gemini 1.5 Flash for BETTER rate limits (15 req/min vs 10 req/min)! Critical fixes! Simplified click handler, fixed auto-submit verification, and reduced token usage by 50-70%!
+        </div>
+
+        <h2>📋 Quick Setup Guide</h2>
+        
+        <h3>Step 1: Install TamperMonkey</h3>
+        <p>TamperMonkey is a browser extension that allows you to run custom scripts on websites.</p>
+        <ul>
+            <li><strong>Chrome:</strong> <a href="https://chrome.google.com/webstore/detail/tampermonkey/" target="_blank">Chrome Web Store</a></li>
+            <li><strong>Firefox:</strong> <a href="https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/" target="_blank">Firefox Add-ons</a></li>
+            <li><strong>Other browsers:</strong> <a href="https://www.tampermonkey.net/" target="_blank">TamperMonkey.net</a></li>
+        </ul>
+
+        <h3>Step 2: Get an AI API Key</h3>
+        <p>You'll need an API key from one of these providers (see comparison below):</p>
+        <ul>
+            <li><strong>Google Gemini:</strong> <a href="https://aistudio.google.com/app/apikey" target="_blank">Get Gemini API Key</a> (Recommended - 1,500 requests/day FREE)</li>
+            <li><strong>Groq:</strong> <a href="https://groq.com" target="_blank">Groq.com</a> (1,000 requests/day, super fast)</li>
+            <li><strong>OpenRouter:</strong> <a href="https://openrouter.ai" target="_blank">OpenRouter.ai</a> ($5 free credits)</li>
+        </ul>
+
+        <h3>Step 3: Install the Script</h3>
+        <ol>
+            <li>Download the <code>ixl-auto-answer-gemini.user.js</code> file from this project</li>
+            <li>TamperMonkey will automatically detect it and prompt you to install</li>
+            <li>Click "Install" in the TamperMonkey dialog</li>
+        </ol>
+
+        <h3>Step 4: Configure the Script</h3>
+        <ol>
+            <li>Visit any IXL.com page</li>
+            <li>You'll see the script panel in the top-right corner</li>
+            <li>Click "Toggle Settings"</li>
+            <li>Paste your API key and save</li>
+            <li>Click "Test Key" to verify it works</li>
+        </ol>
+
+        <div class="info-box">
+            <strong>✅ You're all set!</strong> Now you can start using the auto-answer feature on IXL questions.
+        </div>
+
+        <h2>🤖 AI API Comparison - Which Has Best Limits?</h2>
+        
+        <div class="info-box">
+            <strong>TL;DR:</strong> <span class="highlight">Gemini 1.5 Flash</span> has the most generous FREE limits at 1,500 requests/day!
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>API Provider</th>
+                    <th>Free Tier Limits</th>
+                    <th>Best For</th>
+                    <th>Setup Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 1.5 Flash</strong></td>
+                    <td><span class="highlight">15 req/min, 1,500 req/day</span></td>
+                    <td>Most IXL users</td>
+                    <td><a href="https://aistudio.google.com/app/apikey">Get Key</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash</strong></td>
+                    <td>10 req/min, 1,500 req/day</td>
+                    <td>Latest model, slightly slower</td>
+                    <td><a href="https://aistudio.google.com/app/apikey">Get Key</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Groq</strong></td>
+                    <td>1,000 req/day, 6,000 tokens/min</td>
+                    <td>Speed demons (300+ tokens/sec)</td>
+                    <td><a href="https://groq.com">Get Key</a></td>
+                </tr>
+                <tr>
+                    <td><strong>OpenRouter</strong></td>
+                    <td>$5 free credits</td>
+                    <td>Access to 300+ models</td>
+                    <td><a href="https://openrouter.ai">Get Key</a></td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek</strong></td>
+                    <td>50 req/day (via OpenRouter)</td>
+                    <td>Official API is paid-only</td>
+                    <td><a href="https://api-docs.deepseek.com">Docs</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Ollama (Local)</strong></td>
+                    <td><span class="highlight">Unlimited!</span></td>
+                    <td>Privacy, unlimited use</td>
+                    <td><a href="https://ollama.ai">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="api-card">
+            <h4>🏆 Recommended: Gemini 1.5 Flash</h4>
+            <p class="limits">FREE: 15 requests/min, 1,500 requests/day</p>
+            <p>Perfect for IXL users. With the script's new HTML-only mode, you can answer 1,500 questions per day without hitting limits!</p>
+            <p><strong>Why it's best:</strong> No credit card needed, instant setup, generous limits, excellent at math</p>
+        </div>
+
+        <div class="api-card">
+            <h4>⚡ Alternative: Groq (Ultra-Fast)</h4>
+            <p class="limits">FREE: 1,000 requests/day, 6,000 tokens/min</p>
+            <p>Groq is blazing fast (300+ tokens/second) if you need instant answers. Great if you're doing many questions in a row.</p>
+            <p><strong>Note:</strong> This script is designed for Gemini API format, so you'd need to modify the API endpoint format for Groq.</p>
+        </div>
+
+        <h2>🎯 How Auto-Fill Works with Different Question Types</h2>
+        
+        <p>The script analyzes the HTML of each question and automatically detects the question type, then generates appropriate JavaScript code to fill in the answer.</p>
+
+        <h3>Supported Question Types</h3>
+
+        <div class="faq-item">
+            <div class="faq-question">1️⃣ Text Input Questions</div>
+            <div class="faq-answer">
+                <p><strong>Example:</strong> "What is 5 + 3?" with a text box</p>
+                <p><strong>How it works:</strong> The AI calculates the answer and fills it into the text input field.</p>
+                <div class="code-block">// The script finds the input and fills it
+input.value = "8";
+input.dispatchEvent(new Event('input'));</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">2️⃣ Button-Style Multiple Choice</div>
+            <div class="faq-answer">
+                <p><strong>Example:</strong> Questions with clickable button or box options containing answer choices</p>
+                <p><strong>How it works:</strong> The AI solves the problem, determines the correct answer, then finds and clicks the matching button or option.</p>
+                <div class="code-block">// The script searches for clickable elements
+const buttons = document.querySelectorAll('button, div[onclick]');
+const target = Array.from(buttons).find(b => 
+  b.textContent.trim() === "Correct Answer"
+);
+target.click(); // Clicks the correct answer</div>
+                <p><strong>✅ Enhanced Detection:</strong> Now detects buttons with <code>onclick</code> handlers, <code>tabindex</code>, and various IXL-specific patterns with full event simulation!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">3️⃣ Checkboxes (Multiple Selection)</div>
+            <div class="faq-answer">
+                <p><strong>Example:</strong> "Select all prime numbers: 2, 4, 7, 9"</p>
+                <p><strong>How it works:</strong> The AI identifies all correct answers and checks the appropriate boxes.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">4️⃣ Radio Buttons</div>
+            <div class="faq-answer">
+                <p><strong>Example:</strong> "Which is larger: A) 3/4 or B) 2/3?"</p>
+                <p><strong>How it works:</strong> The AI calculates and selects the correct radio button.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">5️⃣ Dropdown Menus</div>
+            <div class="faq-answer">
+                <p><strong>Example:</strong> "Select the correct operation: [dropdown]"</p>
+                <p><strong>How it works:</strong> The AI chooses the correct option from the dropdown.</p>
+            </div>
+        </div>
+
+        <h2>❓ Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Why am I hitting rate limits after only 20 questions?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> You were hitting the <strong>per-minute</strong> limit, not the daily limit. Here's what happened:</p>
+                <ul>
+                    <li>Old version sent images + HTML (very large requests)</li>
+                    <li>Gemini 1.5 Flash: 15 requests/minute limit</li>
+                    <li>Gemini 2.0 Flash: 10 requests/minute limit</li>
+                    <li>If you did 20 questions in 2 minutes, you hit the limit!</li>
+                </ul>
+                <p><strong>✅ Solution:</strong> Version 14.0 sends HTML-only (no images), reducing request size by 50-70%. You can now pace yourself to stay under 15 requests/minute, or wait a minute between batches.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Which Gemini model has better limits - 1.5 Flash or 2.0 Flash?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> Gemini 1.5 Flash has better FREE tier limits:</p>
+                <table>
+                    <tr>
+                        <th>Model</th>
+                        <th>Free Tier</th>
+                    </tr>
+                    <tr>
+                        <td>Gemini 1.5 Flash</td>
+                        <td><span class="highlight">15 req/min</span>, 1,500 req/day</td>
+                    </tr>
+                    <tr>
+                        <td>Gemini 2.0 Flash</td>
+                        <td>10 req/min, 1,500 req/day</td>
+                    </tr>
+                </table>
+                <p><strong>Recommendation:</strong> Use Gemini 1.5 Flash for the higher per-minute limit!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Does DeepSeek have better limits than Gemini?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> No, DeepSeek has MORE restrictive limits:</p>
+                <ul>
+                    <li><strong>DeepSeek Official API:</strong> Paid only, no free tier</li>
+                    <li><strong>DeepSeek via OpenRouter:</strong> Only 50 requests/day free</li>
+                    <li><strong>Gemini 1.5 Flash:</strong> 1,500 requests/day free</li>
+                </ul>
+                <p><strong>Winner:</strong> Gemini is 30x more generous!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Why did you remove image/canvas support?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> To help you stay under rate limits!</p>
+                <ul>
+                    <li>Images use 1,000-5,000 tokens per request</li>
+                    <li>HTML-only uses 200-500 tokens per request</li>
+                    <li><strong>Result:</strong> You can do 3-5x more questions before hitting limits</li>
+                    <li>The AI can still solve problems from HTML and LaTeX alone</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I make auto-fill work with button questions?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> It should work automatically! Version 14.0 includes:</p>
+                <ol>
+                    <li>Enhanced AI prompts that teach it to detect button-style questions</li>
+                    <li>Better selectors for <code>div[onclick]</code>, <code>span[onclick]</code>, etc.</li>
+                    <li>Improved text matching (exact match + partial match)</li>
+                </ol>
+                <p><strong>If it doesn't work:</strong></p>
+                <ul>
+                    <li>Check the logs (click "Logs" button) to see what it tried</li>
+                    <li>Try "Display Answer Only" mode and click manually</li>
+                    <li>The AI-generated JavaScript code will appear in logs - you can see what it tried</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: What's the difference between "Display Answer Only" and "Auto Fill" modes?</div>
+            <div class="faq-answer">
+                <p><strong>Display Answer Only:</strong></p>
+                <ul>
+                    <li>✅ Shows the answer and solution steps in the panel</li>
+                    <li>✅ 100% reliable - always works</li>
+                    <li>❌ You have to manually click/type the answer</li>
+                </ul>
+                <p><strong>Auto Fill:</strong></p>
+                <ul>
+                    <li>✅ Automatically fills in the answer for you</li>
+                    <li>✅ Can auto-submit and go to next question</li>
+                    <li>⚠️ Experimental - may not work on all question types</li>
+                </ul>
+                <p><strong>Recommendation:</strong> Start with "Display Answer Only" until you're comfortable, then try "Auto Fill"</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Can I use this with other AI models besides Gemini?</div>
+            <div class="faq-answer">
+                <p><strong>A:</strong> Partially. The script is designed for Gemini's API format, but you can try:</p>
+                <ul>
+                    <li><strong>Any Gemini model:</strong> Works out of the box (1.5 Flash, 2.0 Flash, 1.5 Pro)</li>
+                    <li><strong>OpenAI API:</strong> Would need code modifications (different API format)</li>
+                    <li><strong>Groq:</strong> Would need code modifications (different endpoint)</li>
+                    <li><strong>Ollama (local):</strong> Would need to expose local API and modify endpoints</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>⚙️ Advanced Tips</h2>
+
+        <div class="info-box">
+            <strong>Tip 1: Pace Your Requests</strong><br>
+            If you're doing many questions in a row, pace yourself to ~10-12 questions per minute to stay well under the 15 req/min limit.
+        </div>
+
+        <div class="info-box">
+            <strong>Tip 2: Use Auto-Next Wisely</strong><br>
+            The "Auto Next Question" feature is powerful but will burn through your daily limit fast. Use it for short sessions, not entire assignments.
+        </div>
+
+        <div class="info-box">
+            <strong>Tip 3: Check the Logs</strong><br>
+            Click the "Logs" button to see exactly what the script is doing. This helps debug when auto-fill doesn't work.
+        </div>
+
+        <div class="info-box">
+            <strong>Tip 4: Monitor Token Usage</strong><br>
+            The panel shows your total token count. Keep an eye on it to understand your usage patterns.
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Academic Integrity</strong><br>
+            This tool is designed for learning purposes. Use it to understand solutions, not to cheat. Always review the solution steps to learn the concepts!
+        </div>
+
+        <h2>🔗 Quick Links</h2>
+        <ul>
+            <li><a href="https://aistudio.google.com/app/apikey">Get Gemini API Key (Free)</a></li>
+            <li><a href="https://groq.com">Groq - Fast AI API</a></li>
+            <li><a href="https://openrouter.ai">OpenRouter - Multiple AI Models</a></li>
+            <li><a href="https://www.tampermonkey.net/">Download TamperMonkey</a></li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border);">
+            <p style="color: var(--text-secondary);">Version 25.1 - NOW DEFAULTS TO GEMINI 1.5 FLASH (15 req/min)!</p>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Better rate limits • HTML-only requests • Better button detection • 50-70% Lower Tokens</p>
+        </div>
+    </div>
+</body>
+</html>
