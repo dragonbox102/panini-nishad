@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IXL Auto Answer - Setup Guide & FAQ</title>
     
-    <!-- ⚠️ CRITICAL: DO NOT CHANGE THIS META TAG FORMAT! -->
-    <!-- The version checker in old script builds depends on this exact format -->
-    <!-- Format MUST be: <meta name="script-version" content="X.X"> -->
-    <meta name="script-version" content="27.0">
+    <meta name="script-version" content="27.1">
     <style>
         :root {
             --bg-primary: #0a0a0a;
@@ -226,7 +223,9 @@
         </div>
         
         <div class="warning-box">
-            <strong>⚠️ IMPORTANT - VERSION 27.0 UPDATE:</strong>
+            <strong>⚠️ IMPORTANT - VERSION 27.1 UPDATE:</strong>
+            <br><br>
+            <strong>🎯 SMART FORMAT SELECTION:</strong> Script now intelligently sends plain text for text-only questions and HTML only when images are detected! Even better token savings.
             <br><br>
             <strong>🎨 REDESIGNED UI:</strong> Complete visual overhaul with IXL-inspired design! Clean separation between Final Answer and Solution Steps, professional gradients, and enhanced typography.
             <br><br>
@@ -359,7 +358,7 @@
         <div class="api-card">
             <h4>🏆 Default: Gemini 2.0 Flash</h4>
             <p class="limits">FREE: 10 requests/min, 1,500 requests/day</p>
-            <p>Latest model from Google! Perfect for IXL users. With the script's HTML-only mode, you can answer 1,500 questions per day without hitting limits!</p>
+            <p>Latest model from Google! Perfect for IXL users. With the script's smart format selection, you can answer 1,500 questions per day without hitting limits!</p>
             <p><strong>Why it's the default:</strong> No credit card needed, instant setup, latest AI model, excellent at math</p>
         </div>
 
@@ -474,7 +473,7 @@ target.click(); // Clicks the correct answer</div>
                     <li>Gemini 2.0 Flash: 10 requests/minute limit</li>
                     <li>If you did 20 questions in 2 minutes, you hit the limit!</li>
                 </ul>
-                <p><strong>✅ Solution:</strong> Version 14.0 sends HTML-only (no images), reducing request size by 50-70%. You can now pace yourself to stay under 15 requests/minute, or wait a minute between batches.</p>
+                <p><strong>✅ Solution:</strong> Version 27.1 uses smart format selection - sends plain text for text-only questions and HTML only when images are detected. This dramatically reduces token usage!</p>
             </div>
         </div>
 
@@ -519,12 +518,12 @@ target.click(); // Clicks the correct answer</div>
         <div class="faq-item">
             <div class="faq-question">Q: Why did you remove image/canvas support?</div>
             <div class="faq-answer">
-                <p><strong>A:</strong> To help you stay under rate limits!</p>
+                <p><strong>A:</strong> Images are NOT removed! Version 27.1 uses SMART detection:</p>
                 <ul>
-                    <li>Images use 1,000-5,000 tokens per request</li>
-                    <li>HTML-only uses 200-500 tokens per request</li>
-                    <li><strong>Result:</strong> You can do 3-5x more questions before hitting limits</li>
-                    <li>The AI can still solve problems from HTML and LaTeX alone</li>
+                    <li>✅ Images ARE sent when questions have diagrams/graphs</li>
+                    <li>✅ Images are SKIPPED for text-only questions (saves tokens)</li>
+                    <li><strong>Result:</strong> You get images when needed, but save 70%+ tokens on text-only questions</li>
+                    <li>The script automatically detects and decides for you!</li>
                 </ul>
             </div>
         </div>
@@ -615,10 +614,8 @@ target.click(); // Clicks the correct answer</div>
         </ul>
 
         <div style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border);">
-            <!-- ⚠️ CRITICAL: DO NOT CHANGE "Version X.X" FORMAT BELOW! -->
-            <!-- Old script builds check for this exact pattern: /Version\s+(\d+\.\d+)/i -->
-            <p style="color: var(--text-secondary);">Version 26.2 - Simplified UI • Settings Button Removed!</p>
-            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Cleaner Interface • Shared API Keys • Access Key Storage Fixed</p>
+            <p style="color: var(--text-secondary);">Version 27.1 - Smart Format Selection!</p>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Plain Text for Text-Only • HTML Only When Images Detected • Maximum Token Savings</p>
         </div>
     </div>
 </body>
