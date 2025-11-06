@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IXL Auto Answer - Setup Guide & FAQ</title>
-
-    <meta name="script-version" content="27.2">
+    
+    <meta name="script-version" content="27.3">
     <style>
         :root {
             --bg-primary: #0a0a0a;
@@ -22,13 +22,13 @@
             --info-bg: #102a3a;
             --info-border: #26a6d4;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
             background: var(--bg-primary);
@@ -36,12 +36,12 @@
             line-height: 1.6;
             padding: 20px;
         }
-
+        
         .container {
             max-width: 1000px;
             margin: 0 auto;
         }
-
+        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
@@ -50,7 +50,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         h2 {
             color: var(--accent);
             margin-top: 3rem;
@@ -59,19 +59,19 @@
             border-bottom: 2px solid var(--border);
             padding-bottom: 0.5rem;
         }
-
+        
         h3 {
             color: var(--text-primary);
             margin-top: 2rem;
             margin-bottom: 1rem;
             font-size: 1.4rem;
         }
-
+        
         p {
             margin-bottom: 1rem;
             color: var(--text-secondary);
         }
-
+        
         .info-box {
             background: var(--info-bg);
             border-left: 4px solid var(--info-border);
@@ -79,7 +79,7 @@
             border-radius: 6px;
             margin: 1.5rem 0;
         }
-
+        
         .warning-box {
             background: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
@@ -87,21 +87,21 @@
             border-radius: 6px;
             margin: 1.5rem 0;
         }
-
+        
         .info-box strong, .warning-box strong {
             color: var(--text-primary);
         }
-
+        
         ul, ol {
             margin-left: 2rem;
             margin-bottom: 1.5rem;
         }
-
+        
         li {
             margin-bottom: 0.75rem;
             color: var(--text-secondary);
         }
-
+        
         code {
             background: var(--code-bg);
             padding: 0.2rem 0.5rem;
@@ -110,7 +110,7 @@
             color: var(--accent);
             font-size: 0.9em;
         }
-
+        
         .code-block {
             background: var(--code-bg);
             border: 1px solid var(--border);
@@ -122,7 +122,7 @@
             font-family: 'Consolas', 'Monaco', monospace;
             font-size: 0.9rem;
         }
-
+        
         .api-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -130,18 +130,18 @@
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
-
+        
         .api-card h4 {
             color: var(--accent);
             margin-bottom: 0.75rem;
         }
-
+        
         .api-card .limits {
             color: #4a9eff;
             font-weight: 600;
             margin: 0.5rem 0;
         }
-
+        
         .faq-item {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
@@ -149,49 +149,49 @@
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
-
+        
         .faq-question {
             font-weight: 600;
             color: var(--accent);
             margin-bottom: 0.75rem;
             font-size: 1.1rem;
         }
-
+        
         .faq-answer {
             color: var(--text-secondary);
         }
-
+        
         a {
             color: var(--accent);
             text-decoration: none;
         }
-
+        
         a:hover {
             text-decoration: underline;
         }
-
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
         }
-
+        
         th, td {
             padding: 0.75rem;
             text-align: left;
             border: 1px solid var(--border);
         }
-
+        
         th {
             background: var(--bg-tertiary);
             color: var(--accent);
             font-weight: 600;
         }
-
+        
         td {
             color: var(--text-secondary);
         }
-
+        
         .highlight {
             background: rgba(16, 163, 127, 0.2);
             padding: 0.2rem 0.5rem;
@@ -207,7 +207,7 @@
         <p style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 2rem;">
             Complete guide to setting up and using the IXL Auto Answer script with AI APIs
         </p>
-
+        
         <div class="warning-box" style="background: #3a1010; border-left: 4px solid #ff4444;">
             <strong style="color: #ff6666; font-size: 1.3rem;">⚠️ STOP! READ THIS FIRST ⚠️</strong>
             <br><br>
@@ -221,11 +221,15 @@
             ✅ It ONLY works when you visit <strong>IXL.com</strong><br>
             ✅ You must install it in your browser first (see instructions below)</p>
         </div>
-
+        
         <div class="warning-box">
-            <strong>⚠️ IMPORTANT - VERSION 27.1 UPDATE:</strong>
+            <strong>⚠️ IMPORTANT - VERSION 27.3 UPDATE:</strong>
             <br><br>
-            <strong>🎯 SMART FORMAT SELECTION:</strong> Script now intelligently sends plain text for text-only questions and HTML only when images are detected! Even better token savings.
+            <strong>💬 GLOBAL MESSAGING:</strong> New real-time messaging system! Communicate globally with other users through the script.
+            <br><br>
+            <strong>🔔 PERSISTENT NOTIFICATIONS:</strong> Notification tracking now persists across page close/reopen - never miss a message!
+            <br><br>
+            <strong>🎯 SMART FORMAT SELECTION:</strong> Script intelligently sends plain text for text-only questions and HTML only when images are detected.
             <br><br>
             <strong>🎨 REDESIGNED UI:</strong> Complete visual overhaul with IXL-inspired design! Clean separation between Final Answer and Solution Steps, professional gradients, and enhanced typography.
             <br><br>
@@ -241,7 +245,7 @@
         </div>
 
         <h2>📋 Quick Setup Guide</h2>
-
+        
         <h3>Step 1: Obtain an Access Key</h3>
         <div class="warning-box">
             <strong>⚠️ ACCESS KEY REQUIRED:</strong> This script is access-controlled. You MUST have a valid access key to use it.
@@ -251,7 +255,7 @@
                 <li>The script checks for version updates and may stop working if outdated</li>
             </ul>
         </div>
-
+        
         <h3>Step 2: Install TamperMonkey</h3>
         <p>TamperMonkey is a browser extension that allows you to run custom scripts on websites.</p>
         <ul>
@@ -287,7 +291,7 @@
         <div class="info-box">
             <strong>✅ You're all set!</strong> With a valid access key, you can now use the auto-answer feature on IXL questions. The script uses built-in shared API keys, so you don't need to configure anything else!
         </div>
-
+        
         <div class="warning-box">
             <strong>🔴 Troubleshooting: "Nothing happens when I enter my access key"</strong>
             <br><br>
@@ -301,7 +305,7 @@
         </div>
 
         <h2>🤖 AI API Comparison - Which Has Best Limits?</h2>
-
+        
         <div class="info-box">
             <strong>TL;DR:</strong> <span class="highlight">Gemini 2.0 Flash</span> is now the default! Latest model with 10 req/min, 1,500 req/day. Switch to Gemini 1.5 Flash if you need faster rate limits (15 req/min).
         </div>
@@ -370,7 +374,7 @@
         </div>
 
         <h2>🎯 How Auto-Fill Works with Different Question Types</h2>
-
+        
         <p>The script analyzes the HTML of each question and automatically detects the question type, then generates appropriate JavaScript code to fill in the answer.</p>
 
         <h3>Supported Question Types</h3>
